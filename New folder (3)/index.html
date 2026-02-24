@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pass{
+            width: 1600px;
+            justify-content: center;
+            align-items: center;
+            margin-left: 300px;
+            height: 1000px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card{
+           width: 500px;
+           height: 500px;
+           border-radius: 20px;
+           background-color: black;
+           color: white;
+
+        }
+
+        .sale{
+            color: green;
+        }
+
+        .sale::before{
+            content: "$";
+        }
+
+        .image{
+            width: 250px;
+            height: 250px;
+        }
+
+        .regular{
+            color: red;
+            text-decoration: line-through;
+        }
+        .regular::before{
+            content: "$";
+        }
+
+        .image img{
+            border-radius: 20px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="pass" id="pass"></div>
+
+    <script>
+
+        var a =  document.getElementById("pass");
+
+
+        var product = [
+        {
+            Image: "OIP.webp",
+            name: "phone",
+            price: 500,
+            oldPrice: 700,
+        },
+         {
+             Image: "OIP.webp",
+            name: "phone",
+            price: 500,
+            oldPrice: 700,
+        },
+         {
+             Image: "OIP.webp",
+            name: "phone",
+            price: 500,
+            oldPrice: 700,
+        },
+         {
+             Image: "OIP.webp",
+            name: "phone",
+            price: 500,
+            oldPrice: 700,
+        },
+         {
+             Image: "OIP.webp",
+            name: "phone",
+            price: 500,
+            oldPrice: 700,
+        },
+
+
+        ] 
+
+        for(var i = 0 ; i<product.length; i++){
+
+            a.innerHTML += `
+            <div class="card">
+
+                <div class="image">
+                <img src="${product[i].Image}" >
+                </div>
+
+
+            
+
+                <div class="title">
+                 ${product[i].name}
+                 </div>
+
+                 <div class="gela">
+                 <div class="sale">
+                 ${product[i].price}
+                 </div>
+
+                 <div class="regular">
+                 ${product[i].oldPrice}
+                 </div>
+                 </div>
+
+                 </div>
+                 `;
+        }
+
+
+
+       // a.innerHTML = "HELO World";
+
+
+
+    </script>
+</body>
+</html>  
